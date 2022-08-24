@@ -16,29 +16,33 @@
     </head>
     <body>
         <header class="header">
-            <h1>Secure Hash Comparator</h1>
-            <p>Validate the integrity of a file downloaded, with SHA512 - SHA256 - MD5.</p>
+            <div class="container">
+                <h1 class="title">Secure Hash Comparator</h1>
+                <p class="subtitle">Validate the integrity of a file downloaded, with SHA512 - SHA256 - MD5.</p>
+            </div>
         </header>
 
         <main>
-            <article class="article">
-                <header>
-                    <a href="https://www.cisco.com/c/pt_br/support/docs/storage-networking/mds-9000-san-management/211350-How-to-Validate-the-Integrity-of-a-Downl.pdf" target="_blank">Veja como obter o hash do arquivo</a>
-                    <a href="#">Here's how to get the hash of the file</a>
-                </header>
-
-                <form action="#">
-                    <label>
-                        Original hash: <input type="text">
-                    </label>
-
-                    <label>
-                        File hash: <input type="text">
-                    </label>
-
-                    <button>To compare</button>
-                </form>
-            </article>
+            <div class="container">
+                <article class="article">
+                    <header>
+                        <a href="https://www.cisco.com/c/pt_br/support/docs/storage-networking/mds-9000-san-management/211350-How-to-Validate-the-Integrity-of-a-Downl.pdf" target="_blank">Veja como obter o hash do arquivo</a>
+                        <a class="get-hash-file" href="#">Here's how to get the hash of the file</a>
+                    </header>
+    
+                    <form action="#">
+                        <label>
+                            Original hash: <input type="text">
+                        </label>
+    
+                        <label>
+                            File hash: <input type="text">
+                        </label>
+    
+                        <button>To compare</button>
+                    </form>
+                </article>
+            </div>    
         </main>
 
         <footer>

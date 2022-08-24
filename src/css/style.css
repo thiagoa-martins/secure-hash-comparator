@@ -1,5 +1,9 @@
 :root {
     --color-primary: #cccccc;
+    --color-secondary: #00ff00;
+    --color-ternary: #c541c5;
+    --color-quaternary: #ffffff;
+    --color-quinary: #912727;
     --font-primary: 'Roboto Mono', monospace;
 }
 
@@ -15,8 +19,84 @@ body {
     align-items: center;
     justify-content: center;
     background-color: var(--color-primary);
+    font-family: var(--font-primary);
+    line-height: 2rem;
+}
+
+.container {
+    padding: 0 1rem;
 }
 
 .header {
+    max-width: 724px;
+}
+
+.header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+}
+
+.header .title {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 3rem;
+}
+
+.header .subtitle {
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+main .article header {
+    text-align: center;
+}
+
+main .article header a {
+    color: var(--color-ternary);
+    transition: 200ms color;
+}
+
+main .article header a:hover {
+    color: var(--color-quinary);
+}
+
+main .article form {
+    margin-top: 2rem;
+}
+
+main .article form label {
+    font-weight: 500;
+}
+
+main .article form label input,
+main .article form button {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-family: var(--font-primary);
+}
+
+
+main .article form label input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 1rem;
+}
+
+main .article form button {
+    width: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    background-color: var(--color-ternary);
+    color: var(--color-quaternary);
+    transition: 200ms filter;
+}
+
+main .article form button:hover {
+    filter: brightness(0.9);
 }
