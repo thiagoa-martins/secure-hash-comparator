@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Hash Comparator</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Secure Hash Comparator</title>
 
-    <link rel="stylesheet" href="src/css/style.css">
-</head>
-<body>
-    <header>
-        <h1>Secure Hash Comparator</h1>
-    </header>
+        <link rel="stylesheet" href="src/css/style.css">
+    </head>
+    <body>
+        <header class="header">
+            <h1>Secure Hash Comparator</h1>
+            <p>Validate the integrity of a file downloaded, with SHA512 - SHA256 - MD5.</p>
+        </header>
 
-    <main>
-        <article>
-            
-        </article>
-    </main>
+        <main>
+            <article>
+                <header>
+                    <a href="https://www.cisco.com/c/pt_br/support/docs/storage-networking/mds-9000-san-management/211350-How-to-Validate-the-Integrity-of-a-Downl.pdf" target="_blank">Veja como obter o hash do arquivo</a>
+                    <a href="#">Here's how to get the hash of the file</a>
+                </header>
 
-    <footer>
+                <form action="#">
+                    <label>
+                        Original hash: <input type="text">
+                    </label>
 
-    </footer>
-</body>
+                    <label>
+                        File hash: <input type="text">
+                    </label>
+
+                    <button>To compare</button>
+                </form>
+            </article>
+        </main>
+
+        <footer>
+
+        </footer>
+    </body>
 </html>
