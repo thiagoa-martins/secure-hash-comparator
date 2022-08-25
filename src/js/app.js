@@ -9,7 +9,7 @@ let hasError = false;
 const validateData = input => {
     const label = input.nextElementSibling;
     const isEmpty = input.value === "";
-    const stringSize = input.value.length + 1;
+    const stringSize = input.value.length;
     const minimumOfCharacters = 8;
 
     if (isEmpty || stringSize < minimumOfCharacters) {
@@ -60,7 +60,7 @@ btn.addEventListener("click", () => {
 
         validateData(input);
 
-        input.addEventListener("keypress", () => {
+        input.addEventListener("keyup", () => {
             validateData(input);
         });
     });
