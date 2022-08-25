@@ -9,22 +9,22 @@ let hasError = false;
 const validateData = input => {
     const label = input.nextElementSibling;
     const isEmpty = input.value === "";
-    const minimumOfCharacters = input.value.length <= 8;
+    const stringSize = input.value.length + 1;
+    const minimumOfCharacters = 8;
 
-    if (isEmpty || minimumOfCharacters) {
+    if (isEmpty || stringSize < minimumOfCharacters) {
         hasError = true;
     
         input.classList.add("error");
         label.textContent = "Cannot be empty or less than 8 characters.";
         label.classList.add("message");
-        return;
+    } else {
+        hasError = false;
+    
+        input.classList.remove("error");
+        label.textContent = "";
+        label.classList.remove("message");
     }
-
-    hasError = false;
-
-    input.classList.remove("error");
-    label.textContent = "";
-    label.classList.remove("message");
 };
 
 form.addEventListener("submit", (event) => {
@@ -50,7 +50,6 @@ btn.addEventListener("click", () => {
             inputs.forEach(input => {
                 input.value = "";
             });
-            return;
         }
 
         if (!valueIsEqual) {
