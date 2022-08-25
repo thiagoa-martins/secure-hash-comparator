@@ -95,6 +95,7 @@ main .article form button {
     background-color: var(--color-ternary);
     color: var(--color-quaternary);
     transition: 200ms filter;
+    cursor: pointer;
 }
 
 main .article form button:hover {

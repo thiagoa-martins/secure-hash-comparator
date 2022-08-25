@@ -32,11 +32,11 @@
     
                     <form action="#">
                         <label>
-                            Original hash: <input type="text">
+                            Original hash: <input type="text" pattern="[0-9A-Za-z].{7,}" title="There is an invalid character or less than 8 characters">
                         </label>
     
                         <label>
-                            File hash: <input type="text">
+                            File hash: <input type="text" pattern="[0-9A-Za-z].{7,}">
                         </label>
     
                         <button>To compare</button>
