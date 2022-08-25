@@ -101,3 +101,7 @@ main .article form button {
 main .article form button:hover {
     filter: brightness(0.9);
 }
+
+.footer {
+    padding: 2rem 0 1rem;
+}
