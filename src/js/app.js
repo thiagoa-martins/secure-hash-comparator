@@ -34,18 +34,23 @@ btn.addEventListener("click", () => {
 
         console.log(moreThanEightCharacters)
 
-        if (!valueIsEqual && moreThanEightCharacters) {
-            alert("Danger!!!!!!!!!!! The file has been compromised! :(");
-        }
-
-        inputs.forEach(input => {
-            input.value = "";
-        });
-
         if (valueIsEqual && moreThanEightCharacters) {
             alert("Everything is fine, the file is safe!! :)");
+
+            inputs.forEach(input => {
+                input.value = "";
+            });
             return;
         }
-        
+
+        if (!valueIsEqual && moreThanEightCharacters) {
+            alert("Danger!!!!!!!!!!! The file has been compromised! :(");
+
+            inputs.forEach(input => {
+                input.value = "";
+            });
+        }
     }
+
+    
 });
