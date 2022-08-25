@@ -29,6 +29,7 @@ body {
 
 .header {
     max-width: 724px;
+    padding-top: 2rem;
 }
 
 .header .container {
