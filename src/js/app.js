@@ -7,7 +7,7 @@ const btn = document.querySelector("#btn");
 let hasError = false;
 
 form.addEventListener("submit", (event) => {
-    console.log(event.preventDefault());
+    event.preventDefault();
 });
 
 btn.addEventListener("click", () => {
