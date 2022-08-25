@@ -29,7 +29,7 @@ body {
 
 .header {
     max-width: 724px;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .header .container {
@@ -64,7 +64,7 @@ main .article header a:hover {
 }
 
 main .article form {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 main .article form label {
@@ -103,10 +103,11 @@ main .article form label label.message {
 }
 
 main .article form button {
-    width: 50%;
+    display: block;
     font-size: 1.2rem;
     font-weight: bold;
-    margin-top: 1rem;
+    margin: 1.5rem auto 0;
+    padding: 1.2rem 2.2rem;
     text-transform: uppercase;
     background-color: var(--color-ternary);
     color: var(--color-quaternary);
@@ -119,5 +120,5 @@ main .article form button:hover {
 }
 
 .footer {
-    padding: 2rem 0 1rem;
+    padding: 1rem 0 1rem;
 }
