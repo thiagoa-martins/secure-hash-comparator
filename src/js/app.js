@@ -30,7 +30,9 @@ btn.addEventListener("click", () => {
 
     if (!hasError) {
         const valueIsEqual = originalHash.value === fileHash.value;
-        const moreThanEightCharacters = originalHash.value.length >= 8;
+        const moreThanEightCharacters = originalHash.value.length >= 8 && fileHash.value.length >= 8;
+
+        console.log(moreThanEightCharacters)
 
         if (!valueIsEqual && moreThanEightCharacters) {
             alert("Danger!!!!!!!!!!! The file has been compromised! :(");
