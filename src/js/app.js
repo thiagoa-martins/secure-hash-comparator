@@ -6,35 +6,45 @@ const btn = document.querySelector("#btn");
 
 let hasError = false;
 
+const validateData = input => {
+    const label = input.nextElementSibling;
+    const isEmpty = input.value === "";
+    const minimumOfCharacters = input.value.length <= 8;
+
+    if (isEmpty || minimumOfCharacters) {
+        hasError = true;
+    
+        input.classList.add("error");
+        label.textContent = "Cannot be empty or less than 8 characters.";
+        label.classList.add("message");
+        return;
+    }
+
+    hasError = false;
+
+    input.classList.remove("error");
+    label.textContent = "";
+    label.classList.remove("message");
+};
+
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 });
 
 btn.addEventListener("click", () => {
     inputs.forEach(input => {
-            if (input.value === "") {
-                hasError = true;
 
-                console.log(input.value);
-    
-                input.classList.add("error");
-                input.setAttribute("placeholder", "Can not be empty");
-                return;
-            }
-    
-            hasError = false;
-    
-            input.classList.remove("error");
-            input.setAttribute("placeholder", "");
+        validateData(input);
+
+        input.addEventListener("keypress", () => {
+            validateData(input);
+        });
     });
 
     if (!hasError) {
         const valueIsEqual = originalHash.value === fileHash.value;
-        const moreThanEightCharacters = originalHash.value.length >= 8 && fileHash.value.length >= 8;
-
-        console.log(moreThanEightCharacters)
-
-        if (valueIsEqual && moreThanEightCharacters) {
+        
+        if (valueIsEqual) {
             alert("Everything is fine, the file is safe!! :)");
 
             inputs.forEach(input => {
@@ -43,14 +53,12 @@ btn.addEventListener("click", () => {
             return;
         }
 
-        if (!valueIsEqual && moreThanEightCharacters) {
+        if (!valueIsEqual) {
             alert("Danger!!!!!!!!!!! The file has been compromised! :(");
 
             inputs.forEach(input => {
                 input.value = "";
             });
         }
-    }
-
-    
+    }    
 });

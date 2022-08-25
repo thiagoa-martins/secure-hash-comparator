@@ -79,7 +79,6 @@ main .article form button {
     font-family: var(--font-primary);
 }
 
-
 main .article form label input {
     box-sizing: border-box;
     display: block;
@@ -93,6 +92,13 @@ main .article form label input.error {
 
 main .article form label input.error::placeholder {
     color: var(--color-quinary);
+}
+
+main .article form label label.message {
+    display: block;
+    color: var(--color-quinary);
+    font-weight: 400;
+    font-size: 0.8rem;
 }
 
 main .article form button {
