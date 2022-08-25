@@ -30,16 +30,16 @@
                         <a class="get-hash-file" href="https://www.computerhope.com/unix/sha512sum.htm" target="_blank">Here's how to get the hash of the file</a>
                     </header>
     
-                    <form action="#">
+                    <form id="form" action="#">
                         <label>
-                            Original hash: <input type="text" pattern="[0-9A-Za-z].{7,}" title="There is an invalid character or less than 8 characters">
+                            Original hash: <input id="hash" type="text" pattern="[0-9A-Za-z].{7,}" title="There is an invalid character or less than 8 characters">
                         </label>
     
                         <label>
-                            File hash: <input type="text" pattern="[0-9A-Za-z].{7,}">
+                            File hash: <input id="fileHash" type="text" pattern="[0-9A-Za-z].{7,}">
                         </label>
     
-                        <button>To compare</button>
+                        <button id="btn">To compare</button>
                     </form>
                 </article>
             </div>    
@@ -48,5 +48,7 @@
         <footer class="footer">
             Developed by <a class="github" href="https://github.com/thiagoa-martins" target="_blank">Thiago Martins</a>
         </footer>
+
+        <script src="./src/js/app.js"></script>
     </body>
 </html>

@@ -87,6 +87,14 @@ main .article form label input {
     padding: 1rem;
 }
 
+main .article form label input.error {
+    border: 1px solid var(--color-quinary);
+}
+
+main .article form label input.error::placeholder {
+    color: var(--color-quinary);
+}
+
 main .article form button {
     width: 50%;
     font-size: 1.2rem;
