@@ -27,6 +27,30 @@ const validateData = input => {
     }
 };
 
+const clearFieldValue = () => {
+    inputs.forEach(input => {
+        input.value = "";
+    });
+};
+
+const checkHash = () => {
+    if (!hasError) {
+        const valueIsEqual = originalHash.value === fileHash.value;
+        
+        if (valueIsEqual) {
+            alert("Everything is fine, the file is safe!! :)");
+
+            clearFieldValue();
+        }
+
+        if (!valueIsEqual) {
+            alert("Danger!!!!!!!!!!! The file has been compromised! :(");
+
+            clearFieldValue();
+        }
+    }    
+};
+
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 });
@@ -41,23 +65,5 @@ btn.addEventListener("click", () => {
         });
     });
 
-    if (!hasError) {
-        const valueIsEqual = originalHash.value === fileHash.value;
-        
-        if (valueIsEqual) {
-            alert("Everything is fine, the file is safe!! :)");
-
-            inputs.forEach(input => {
-                input.value = "";
-            });
-        }
-
-        if (!valueIsEqual) {
-            alert("Danger!!!!!!!!!!! The file has been compromised! :(");
-
-            inputs.forEach(input => {
-                input.value = "";
-            });
-        }
-    }    
+    checkHash();
 });
