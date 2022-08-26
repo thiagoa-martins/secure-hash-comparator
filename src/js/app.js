@@ -35,7 +35,7 @@ const clearFieldValue = () => {
 
 const checkHash = () => {
     if (!hasError) {
-        const valueIsEqual = originalHash.value === fileHash.value;
+        const valueIsEqual = originalHash.value.length && fileHash.value.length && originalHash.value === fileHash.value;
         
         if (valueIsEqual) {
             alert("Everything is fine, the file is safe!! :)");
