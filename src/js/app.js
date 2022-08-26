@@ -56,14 +56,11 @@ form.addEventListener("submit", (event) => {
 });
 
 btn.addEventListener("click", () => {
-    inputs.forEach(input => {
-
-        validateData(input);
-
-        input.addEventListener("keyup", () => {
-            validateData(input);
-        });
-    });
-
     checkHash();
+});
+
+inputs.forEach(input => {
+    input.addEventListener("keyup", () => {
+        validateData(input);
+    });
 });
