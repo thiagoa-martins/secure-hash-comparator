@@ -90,15 +90,16 @@ main .article form label label.message {
 ```js
 btn.addEventListener("click", () => {
     inputs.forEach(input => {
-
         validateData(input);
-
-        input.addEventListener("keyup", () => {
-            validateData(input);
-        });
     });
 
     checkHash();
+});
+
+inputs.forEach(input => {
+    input.addEventListener("keyup", () => {
+        validateData(input);
+    });
 });
 ```
 
