@@ -13,18 +13,26 @@ const validateData = input => {
     const minimumOfCharacters = 8;
 
     if (isEmpty || stringSize < minimumOfCharacters) {
-        hasError = true;
-    
         input.classList.add("error");
         label.textContent = "Cannot be empty or less than 8 characters.";
         label.classList.add("message");
     } else {
         hasError = false;
-    
+
         input.classList.remove("error");
         label.textContent = "";
         label.classList.remove("message");
     }
+
+    const checkInputError = input => {
+        const hasClassError = input.classList.contains("error");;
+
+        if (hasClassError) {
+            hasError = true;
+        }
+    };
+
+    inputs.forEach(checkInputError);
 };
 
 const clearFieldValue = () => {
@@ -35,8 +43,8 @@ const clearFieldValue = () => {
 
 const checkHash = () => {
     if (!hasError) {
-        const valueIsEqual = originalHash.value.length && fileHash.value.length && originalHash.value === fileHash.value;
-        
+        const valueIsEqual = originalHash.value === fileHash.value;
+
         if (valueIsEqual) {
             alert("Everything is fine, the file is safe!! :)");
 
@@ -56,6 +64,10 @@ form.addEventListener("submit", (event) => {
 });
 
 btn.addEventListener("click", () => {
+    inputs.forEach(input => {
+        validateData(input);
+    });
+
     checkHash();
 });
 
